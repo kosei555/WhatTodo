@@ -1,0 +1,1 @@
+DELETE * FROM inbox_current WHERE id=[p_id]
