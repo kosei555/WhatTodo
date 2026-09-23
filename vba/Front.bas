@@ -51,4 +51,11 @@ Public Function AddInbox()
     idea = InputBox("idea‚ğ“ü—Í")
     InsertInbox CurrentDb, idea
 End Function
+Public Function AddActionOfProject()
+    Dim projectId As Long
+    Dim todo As String
+    projectId = InputBox("project_id‚ğ“ü—Í")
+    todo = InputBox("‚â‚é‚×‚«s“®‚ğ“ü—Í")
+    InsertActionWithProjectId CurrentDb, todo, projectId
+End Function
 

@@ -76,3 +76,17 @@ Public Function InsertAction(db As DAO.Database, todo As String)
     qdf.Close
 End Function
 
+Public Function InsertActionWithProjectId(db As DAO.Database, todo As String, projectId As Long)
+    Dim queryName As String
+    Dim qdf As QueryDef
+    Dim todoPramName As String
+    Dim projectIdParamName As String
+    queryName = "InsertAction(p_todo,p_project_id)"
+    todoPramName = "p_todo"
+    projectIdParamName = "p_project_id"
+    Set qdf = db.QueryDefs(queryName)
+    qdf.Parameters(todoPramName).Value = todo
+    qdf.Parameters(projectIdParamName).Value = projectId
+    qdf.Execute
+    qdf.Close
+End Function
